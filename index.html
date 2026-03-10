@@ -10,17 +10,21 @@
         .flex {
             display: flex;
             gap: 20px; /* space between left & right */
-            flex-wrap: wrap;
+            flex-direction: column;
         }
 
         /* Each side takes 50% of width */
         .left, .right {
             width: 100%;
             padding: 0px 10px;
-            justify-content: center;
         }
 
+        /*Desktop layout*/
         @media (min-width: 1000px) {
+            .flex {
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
             .left, .right {
                 width: 50%;
             }
@@ -83,8 +87,9 @@
             background-size: 400px;
             background-color: #eaa165;
             color: #004360;
-            padding-left: 40px;
-            padding-right: 40px;
+            padding-left: 15px;
+            padding-right: 15px;
+            overflow-x: hidden;
         }
 
         body h1 {
@@ -96,13 +101,14 @@
             display: flex;
             justify-content: center;
             align-items: flex-end; /* vertical alignment */
-            padding: 60px 20px 60px 30px;
+            padding: 40px 10px;
             max-width: 100%;
+            overflow: hidden;
         }
         #kanutitle img {
-            height: 90px;
+            height: clamp(35px, 7vw, 90px);
             width: auto;
-            margin: -11px; /* space between letters */
+            margin: -9px; /* space between letters */
         }
     </style>
 </head>
