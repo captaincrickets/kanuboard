@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       status.textContent = "Sending...";
       try {
         await fetch(API_URL, {
+            mode: "no-cors",
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ type: "message", message: text })
